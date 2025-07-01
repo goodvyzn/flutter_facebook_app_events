@@ -381,4 +381,8 @@ class FacebookAppEvents {
     });
     return filtered;
   }
+
+  Future<void> initialize() {
+    return _channel.invokeMethod<void>('initialize');
+  }
 }

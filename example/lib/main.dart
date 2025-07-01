@@ -24,6 +24,12 @@ class MyApp extends StatelessWidget {
                 },
               ),
               MaterialButton(
+                child: Text("Initialize"),
+                onPressed: () {
+                  facebookAppEvents.initialize();
+                },
+              ),
+              MaterialButton(
                 child: Text("Click me!"),
                 onPressed: () {
                   facebookAppEvents.logEvent(

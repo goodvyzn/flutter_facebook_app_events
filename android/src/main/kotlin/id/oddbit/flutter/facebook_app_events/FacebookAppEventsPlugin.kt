@@ -4,6 +4,7 @@ import androidx.annotation.NonNull
 
 import android.os.Bundle
 import android.util.Log
+import com.facebook.BuildConfig
 import com.facebook.FacebookSdk
 import com.facebook.appevents.AppEventsLogger
 import com.facebook.GraphRequest
@@ -54,7 +55,7 @@ class FacebookAppEventsPlugin: FlutterPlugin, MethodCallHandler {
       "getAnonymousId" -> handleGetAnonymousId(call, result)
       "logPurchase" -> handlePurchased(call, result)
       "setAdvertiserTracking" -> handleSetAdvertiserTracking(call, result)
-
+      "initialize" -> handleInitialize(call, result)
       else -> result.notImplemented()
     }
   }
@@ -207,5 +208,10 @@ class FacebookAppEventsPlugin: FlutterPlugin, MethodCallHandler {
 
     appEventsLogger.logPurchase(amount, currency, parameterBundle)
     result.success(null)
+  }
+
+  private fun handleInitialize(call: MethodCall, result: Result) {
+      FacebookSdk.fullyInitialize()
+      result.success(null);
   }
 }

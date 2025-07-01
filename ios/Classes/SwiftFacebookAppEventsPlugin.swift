@@ -11,8 +11,8 @@ public class SwiftFacebookAppEventsPlugin: NSObject, FlutterPlugin {
         // Required for FB SDK 9.0, as it does not initialize the SDK automatically any more.
         // See: https://developers.facebook.com/blog/post/2021/01/19/introducing-facebook-platform-sdk-version-9/
         // "Removal of Auto Initialization of SDK" section
-        ApplicationDelegate.shared.initializeSDK()
-
+//        ApplicationDelegate.shared.initializeSDK()
+        
         registrar.addMethodCallDelegate(instance, channel: channel)
         registrar.addApplicationDelegate(instance)
     }
@@ -77,6 +77,9 @@ public class SwiftFacebookAppEventsPlugin: NSObject, FlutterPlugin {
         case "setAdvertiserTracking":
             handleSetAdvertiserTracking(call, result: result)
             break
+        case "initialize":
+            handleInitialize(call, result: result)
+            break
         default:
             result(FlutterMethodNotImplemented)
         }
@@ -87,7 +90,7 @@ public class SwiftFacebookAppEventsPlugin: NSObject, FlutterPlugin {
         result(nil)
     }
 
-    private func handleSetUserData(_ call: FlutterMethodCall, result: @escaping FlutterResult) {        
+    private func handleSetUserData(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let arguments = call.arguments as? [String: Any] ?? [String: Any]()
 
         AppEvents.shared.setUserData(arguments["email"] as? String, forType: FBSDKAppEventUserDataType.email)
@@ -176,7 +179,6 @@ public class SwiftFacebookAppEventsPlugin: NSObject, FlutterPlugin {
         let currency = arguments["currency"] as! String
         let parameters = arguments["parameters"] as? [AppEvents.ParameterName: Any] ?? [AppEvents.ParameterName: Any]()
         AppEvents.shared.logPurchase(amount: amount, currency: currency, parameters: parameters)
-
         result(nil)
     }
 
@@ -187,6 +189,11 @@ public class SwiftFacebookAppEventsPlugin: NSObject, FlutterPlugin {
         Settings.shared.isAdvertiserTrackingEnabled = enabled
         Settings.shared.isAdvertiserTrackingEnabled = enabled
         Settings.shared.isAdvertiserIDCollectionEnabled = collectId
+        result(nil)
+    }
+    
+    private func handleInitialize(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+        ApplicationDelegate.shared.initializeSDK()
         result(nil)
     }
 }

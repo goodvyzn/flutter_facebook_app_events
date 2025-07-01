@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
     :path: Flutter
 
 SPEC CHECKSUMS:
-  facebook_app_events: cfa07e73912a052992b5f218f79a19a66a99bf1a
+  facebook_app_events: 6b4e3e9d2838e82c75996867a0c6c18dcabf2441
   FBAEMKit: e34530df538b8eb8aeb53c35867715ba6c63ef0c
   FBSDKCoreKit: d3f479a69127acebb1c6aad91c1a33907bcf6c2f
   FBSDKCoreKit_Basics: 017b6dc2a1862024815a8229e75661e627ac1e29
