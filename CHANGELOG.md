@@ -1,3 +1,27 @@
+## 0.24.0
+- Add `activateApp()` to manually log app activation when automatic app event logging is disabled (PR [#466](https://github.com/oddbit/flutter_facebook_app_events/pull/466))
+
+## 0.23.0
+- iOS: Add Swift Package Manager (SPM) support (fixes [#464](https://github.com/oddbit/flutter_facebook_app_events/issues/464))
+
+## 0.22.1
+- Fix Android crash when `setUserData()` is called with null fields (fixes [#462](https://github.com/oddbit/flutter_facebook_app_events/issues/462))
+
+## 0.22.0
+- iOS: Update Swift code for Facebook SDK 18.x compatibility (PR [#455](https://github.com/oddbit/flutter_facebook_app_events/pull/455), fixes [#451](https://github.com/oddbit/flutter_facebook_app_events/issues/451) and [#454](https://github.com/oddbit/flutter_facebook_app_events/issues/454))
+- iOS: Refactor parameter unpacking (PR [#461](https://github.com/oddbit/flutter_facebook_app_events/pull/461), fixes [#460](https://github.com/oddbit/flutter_facebook_app_events/issues/460))
+- Refactor/default parameter values (PR [#458](https://github.com/oddbit/flutter_facebook_app_events/pull/458))
+
+## 0.21.1
+- Refactor advertiser tracking logic (PR [#457](https://github.com/oddbit/flutter_facebook_app_events/pull/457))
+- Remove violating parameter in example app (PR [#459](https://github.com/oddbit/flutter_facebook_app_events/pull/459))
+
+## 0.21.0
+- Update plugin to support modern Flutter plugin API and Android Gradle Plugin (PR [#418](https://github.com/oddbit/flutter_facebook_app_events/pull/418))
+
+## 0.20.2
+- Add documentation for Facebook Event Manager "Please Upgrade SDK" warning (PR [#442](https://github.com/oddbit/flutter_facebook_app_events/pull/442))
+
 ## 0.20.1
 Updating example app 
 

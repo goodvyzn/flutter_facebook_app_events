@@ -60,5 +60,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>FacebookAutoLogAppEventsEnabled</key>
+	<false/>
+	<key>FacebookAutoInitEnabled</key>
+	<false/>
 </dict>
 </plist>

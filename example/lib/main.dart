@@ -25,8 +25,22 @@ class MyApp extends StatelessWidget {
               ),
               MaterialButton(
                 child: Text("Initialize"),
-                onPressed: () {
-                  facebookAppEvents.initialize();
+                onPressed: () async {
+                  try {
+                    await facebookAppEvents.initialize();
+                  } catch (e) {
+                    print(e);
+                  }
+                },
+              ),
+              MaterialButton(
+                child: Text("Activate App"),
+                onPressed: () async {
+                  try {
+                    await facebookAppEvents.activateApp();
+                  } catch (e) {
+                    print(e);
+                  }
                 },
               ),
               MaterialButton(
@@ -46,7 +60,6 @@ class MyApp extends StatelessWidget {
                   facebookAppEvents.setUserData(
                     email: 'opensource@oddbit.id',
                     firstName: 'Oddbit',
-                    dateOfBirth: '2019-10-19',
                     city: 'Denpasar',
                     country: 'Indonesia',
                   );
